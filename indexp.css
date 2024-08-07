@@ -1,0 +1,252 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4;
+  background: linear-gradient(-45deg, #1e1e1e , #333, #1e1e1e , #333);
+  background-size: 200% 200%;
+  animation: gradient 30s ease infinite;
+  height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.shakable {
+  transition: transform 0.5s ease-out forwards;
+}
+
+.shakable.shaking {
+  animation: shake 0.3s ease-out forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+section {
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(112, 217, 239, 0.2);
+    transition: padding 0.3s ease-out;
+    border-radius: 1px;
+    max-width: 800px; 
+    overflow: auto; 
+    position: relative; 
+    border-radius: 5px;
+    outline: 1.2px solid #66d8ef33;
+    filter: none;
+    filter: blur(3px);
+  }
+  
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(farthest-corner at 50% 50%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+
+  section:hover {
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(112, 217, 239, 0.3);
+    border-radius: 8px;
+    filter: none;
+}
+
+section {
+  background: linear-gradient(45deg, #474747, #222, #474747, #222);
+  background-size: 600% 600%;
+  animation: section-gradient 30s ease infinite;
+}
+
+@keyframes section-gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+h2 {
+    margin-top: 0;
+    color: #fff; 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li h3 {
+    margin-top: 0;
+    color: #fff; 
+}
+
+::selection {
+    background: #66d8ef00;
+    color: #66d9ef;
+}
+
+.droplet {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: growAndFade 0.5s ease-out forwards;
+}
+
+@keyframes growAndFade {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
+
+.custom-link:link {
+    color: #66d9ef;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .custom-link:visited {
+    color: #66d9ef;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .custom-link:hover {
+    color: #66d9ef;
+    background-color: #565656;
+  }
+  
+  .custom-link:active {
+    color: #b2d8d8;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .footer-link:link {
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .footer-link:visited {
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    color: #66d9ef;
+    background-color: #b2d8d8;
+  }
+  
+  .footer-link:active {
+    color: #b2d8d8;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  section {
+    flex-basis: 30%;
+    margin: 20px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+    section {
+      flex-basis: 100%;
+      margin: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    main {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    section {
+      flex-basis: 95%;
+      margin: 15px;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) {
+    main {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    section {
+      flex-basis: 40%;
+      margin: 20px;
+    }
+  }
